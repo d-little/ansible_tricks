@@ -4,7 +4,9 @@ Tricks and Tips I've written down while using Ansible so as not to forget
 ### Colon in a When statement
 Taken from: https://github.com/ansible/ansible/issues/38133#issuecomment-483230561
 
-eg, this will not work:
+This will not work: `when: cmd_out.stdout == "lslpp: Fileset some_files* not installed."`
+
+eg:
 ```
   - name: Check if some files already installed
     command: lslpp -l some_files*
