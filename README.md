@@ -10,7 +10,7 @@ eg:
 ```
   - name: Check if some files already installed
     command: lslpp -l some_files*
-    register: krb5_output
+    register: cmd_out
     failed_when: no
     changed_when: no  # Dont fail, dont change.
   
@@ -35,7 +35,7 @@ So;
 ```
   - name: Check if some files already installed
     command: lslpp -l some_files*
-    register: krb5_output
+    register: cmd_out
     failed_when: no
     changed_when: no  # Dont fail, dont change.
   
