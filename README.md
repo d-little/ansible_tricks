@@ -8,7 +8,8 @@ eg: When modifying root's fsize ulimit, make sure it isnt already set to -1:
 ```ansible
 shell: >
     ( lsuser -c -a fsize root|xargs|egrep -q '.name:fsize root:-1' ) && echo 'nochange' || chuser fsize=-1 root
-changed_when: move_files.stdout != 'nochange'
+register: chuser_out
+changed_when: chuser_out.stdout != 'nochange'
 ```
 
 ### Colon in a When statement
