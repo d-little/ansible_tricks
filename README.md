@@ -1,6 +1,13 @@
 # ansible_tricks
 Tricks and Tips I've written down while using Ansible so as not to forget
 
+### Leave Debug Tasks Behind + Leave Behind Commented-out Tasks
+
+Old debug tasks can be invaluable learning experiences!  Leave them in the task lists!
+
+I find it good practice to leave in debug tasks and commented out tasks created during role creation+debugging.  A lot of the time those are there because something didnt work right the first time.  These little debug tasks can be handy for the next person to come along and read the task to figure out what you were trying to do and why you did it in a particular way.
+
+
 ### Making shell commands idempotent
 If you must use command or shell modules you should always make them idempotent  
 
