@@ -62,3 +62,11 @@ So;
       var: cmd_out
     when: cmd_out.stdout == "lslpp:" ~" Fileset some_files* not installed."
 ```
+
+### Merge multiple lists 
+```ansible
+- name: merge every var that starts with 'start_of_list*'
+  set_fact:
+    lists_merged: "{{ lists_merged | union(vars[item]) }}"
+  loop: "{{ lookup('varnames', 'start_of_list.+').split(',') }}"
+```
